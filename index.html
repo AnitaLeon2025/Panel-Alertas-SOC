@@ -36,7 +36,13 @@
         <div class="contador"><span>Medias</span> <strong id="cont-media">0</strong></div>
         <div class="contador"><span>Bajas</span> <strong id="cont-baja">0</strong></div>
       </div>
-      <div id="barra-severidad" class="barra-proporcion" aria-label="Proporción por severidad"></div>
+      <div id="barra-severidad" class="barra-proporcion" role="img" aria-label="Proporción de alertas por severidad"></div>
+      <ul class="leyenda">
+        <li class="sev-critica">Crítica</li>
+        <li class="sev-alta">Alta</li>
+        <li class="sev-media">Media</li>
+        <li class="sev-baja">Baja</li>
+      </ul>
     </section>
 
     <section aria-labelledby="titulo-estado">
@@ -51,17 +57,6 @@
     <section aria-labelledby="titulo-ultimas">
       <h2 id="titulo-ultimas">Últimas 5 alertas</h2>
       <div id="ultimas-alertas">
-        <!-- Maqueta: en E3 JavaScript generará estas tarjetas -->
-        <article class="tarjeta">
-          <h3>Crítica</h3>
-          <p>Firewall</p>
-          <p>SRV-WEB-01</p>
-        </article>
-        <article class="tarjeta">
-          <h3>Media</h3>
-          <p>Correo</p>
-          <p>PC-CONTA-03</p>
-        </article>
       </div>
     </section>
   </main>
@@ -69,5 +64,7 @@
   <footer><p>Programación II · Equipo 3 · UNAS</p></footer>
   <script src="js/datos.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/tarjetas.js"></script>
+  <script src="js/panel.js"></script>
 </body>
 </html>
