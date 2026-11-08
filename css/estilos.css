@@ -1,72 +1,184 @@
+:root{
+    --color-fondo: #fbe9f7;
+    --color-texto: #3b0a45;
+    --color-titulo: #7a0f6b;
+    --color-enlace: #8f077d;
+    --color-tarjeta: #ffffff;
+    --color-borde: #8f077d;
+    --color-boton: #81288f;
+    --color-boton-hover: #5e1569;
+    --color-error: #8a0000;
+
+    --espacio-1: 8px;
+    --espacio-2: 16px;
+    --espacio-3: 24px;
+
+    --fuente: "Segoe UI", Arial, sans-serif;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
 body{
-    font-family: "Times New Roman", serif;
-    background-color: #f499df;
-    color: rgb(80, 3, 88);
-    margin: 30px;
+    font-family: var(--fuente);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    margin: 0;
+    padding: var(--espacio-2);
+    line-height: 1.5;
 }
 
-h1{
-    color: #b605a7;
-}
-
-h2{
-    color: #b935a3;
-}
+h1{ color: var(--color-titulo); }
+h2, h3{ color: var(--color-titulo); }
 
 a{
-    color: #b02c8d;
-    text-decoration: none;
-    margin-right: 20px;
+    color: var(--color-enlace);
+    text-decoration: underline;
 }
 
-div{
-    background-color: #d746e7;
-    border-left: 5px solid #8f077d;
-    padding: 15px;
-    margin-top: 10px;
+main{ margin-top: var(--espacio-2); }
+
+footer{
+    margin-top: var(--espacio-3);
+    font-size: 0.9rem;
+}
+
+/* ===== Menú ===== */
+nav ul{
+    list-style: none;
+    padding: 0;
+    margin: var(--espacio-1) 0;
+    display: none;
+    flex-direction: column;
+    gap: var(--espacio-1);
+}
+
+nav ul.abierto{
+    display: flex;
+}
+
+nav a{
+    display: block;
+    padding: var(--espacio-1);
+}
+
+nav a[aria-current="page"]{
+    font-weight: bold;
+    border-bottom: 3px solid var(--color-borde);
+}
+
+.btn-menu{
+    display: block;
+}
+
+/* ===== Contadores y tarjetas ===== */
+.contadores{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacio-1);
+}
+
+.contador,
+.tarjeta{
+    background-color: var(--color-tarjeta);
+    border-left: 5px solid var(--color-borde);
+    padding: var(--espacio-2);
     border-radius: 8px;
+}
+
+.contador strong{
+    display: block;
+    font-size: 1.5rem;
+}
+
+#ultimas-alertas,
+#lista-alertas{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacio-2);
+}
+
+/* ===== Formularios ===== */
+.campo{
+    margin-bottom: var(--espacio-2);
+}
+
+label{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 4px;
 }
 
 input,
 select,
 textarea{
-    width: 300px;
-    padding: 8px;
-    margin-bottom: 12px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-texto);
+    border-radius: 5px;
+    font: inherit;
+}
 
+.error{
+    color: var(--color-error);
 }
 
 button{
-    background-color: #81288f;
-    color: white;
+    background-color: var(--color-boton);
+    color: #ffffff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-
+    font: inherit;
 }
 
-button:hover{
-    background-color: #f52acc;
-
+button:hover,
+button:focus-visible{
+    background-color: var(--color-boton-hover);
 }
 
-.contador,
-.tarjeta{
-    background-color: #d746e7;
-    border-left: 5px solid #8f077d;
-    padding: 15px;
-    margin-top: 10px;
-    border-radius: 8px;
+:focus-visible{
+    outline: 3px solid var(--color-texto);
+    outline-offset: 2px;
 }
 
-nav ul{
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 20px;
+/* ===== Tablet: 601px a 960px ===== */
+@media (min-width: 601px){
+    body{ padding: var(--espacio-3); }
+
+    .contadores{ grid-template-columns: repeat(4, 1fr); }
+
+    #ultimas-alertas,
+    #lista-alertas{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    input,
+    select,
+    textarea{
+        max-width: 420px;
+    }
 }
 
-.error{
-    color: #7a0000;
+/* ===== Escritorio: más de 960px ===== */
+@media (min-width: 961px){
+    body{
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .btn-menu{ display: none; }
+
+    nav ul{
+        display: flex;
+        flex-direction: row;
+        gap: var(--espacio-3);
+    }
+
+    #ultimas-alertas,
+    #lista-alertas{
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
