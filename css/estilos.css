@@ -1,0 +1,72 @@
+body{
+    font-family: "Times New Roman", serif;
+    background-color: #f499df;
+    color: rgb(80, 3, 88);
+    margin: 30px;
+}
+
+h1{
+    color: #b605a7;
+}
+
+h2{
+    color: #b935a3;
+}
+
+a{
+    color: #b02c8d;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+div{
+    background-color: #d746e7;
+    border-left: 5px solid #8f077d;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+input,
+select,
+textarea{
+    width: 300px;
+    padding: 8px;
+    margin-bottom: 12px;
+
+}
+
+button{
+    background-color: #81288f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+button:hover{
+    background-color: #f52acc;
+
+}
+
+.contador,
+.tarjeta{
+    background-color: #d746e7;
+    border-left: 5px solid #8f077d;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.error{
+    color: #7a0000;
+}
