@@ -1,7 +1,7 @@
 # Panel de Alertas SOC
 
 Proyecto de Programación II (IC010404) · Equipo 3
-Integrantes: [León Rosales Ana Maria], [Torres Sangama Ana Paula]
+Integrantes: León Rosales Ana Maria, Torres Sangama Ana Paula
 
 Panel web para registrar y consultar alertas de seguridad (firewall, antivirus, IDS, correo).
 
