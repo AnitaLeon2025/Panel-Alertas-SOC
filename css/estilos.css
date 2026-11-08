@@ -277,3 +277,73 @@ button:focus-visible{
 .btn-peligro{ background-color: var(--color-error); }
 .btn-peligro:hover, .btn-peligro:focus-visible{ background-color: #5c0000; }
 #mensaje-form{ font-weight: bold; }
+
+
+
+/* = Etapa 4: errores accesibles, estados y cuadro de cierre = */
+
+/* Los errores no dependen solo del color: llevan la palabra "Error:" y borde grueso */
+small.error{ display: block; font-weight: bold; }
+.error:not(:empty)::before{ content: "Error: "; }
+
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"]{
+    border: 3px solid var(--color-error);
+    background-color: #fff5f5;
+}
+
+.ayuda{ display: block; font-size: 0.85rem; }
+
+/* Mensajes de éxito y de error generales */
+.mensaje-exito:not(:empty),
+.aviso:not(:empty){
+    background-color: #e6f4ea;
+    border-left: 5px solid var(--sev-baja);
+    border-radius: 5px;
+    padding: var(--espacio-1) var(--espacio-2);
+    font-weight: bold;
+}
+.mensaje-error-form:not(:empty){
+    background-color: #fdecea;
+    border-left: 5px solid var(--color-error);
+    border-radius: 5px;
+    padding: var(--espacio-1) var(--espacio-2);
+    color: var(--color-error);
+    font-weight: bold;
+}
+
+.resumen-lista{ font-size: 0.9rem; }
+
+/* Botón deshabilitado */
+button:disabled{
+    background-color: #9a8aa0;
+    cursor: not-allowed;
+}
+
+.btn-secundario{
+    background-color: #ffffff;
+    color: var(--color-boton);
+    border: 2px solid var(--color-boton);
+}
+.btn-secundario:hover,
+.btn-secundario:focus-visible{ background-color: #f3e1f1; }
+
+/* Cuadro de cierre */
+dialog{
+    border: 2px solid var(--color-borde);
+    border-radius: 8px;
+    padding: var(--espacio-2);
+    width: calc(100% - 32px);
+    max-width: 480px;
+    color: var(--color-texto);
+}
+dialog::backdrop{ background-color: rgba(59, 10, 69, 0.6); }
+dialog h2{ margin-top: 0; }
+
+
+.aviso{
+    position: sticky;
+    top: 8px;
+    z-index: 10;
+}
