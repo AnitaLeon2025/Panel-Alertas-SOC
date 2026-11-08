@@ -10,11 +10,15 @@
   <header>
     <h1>Panel de Alertas SOC</h1>
     <nav aria-label="Menú principal">
-      <ul>
-        <li><a href="index.html" aria-current="page">Panel</a></li>
-        <li><a href="registrar.html">Registrar alerta</a></li>
-        <li><a href="alertas.html">Alertas</a></li>
-      </ul>
+        <button type="button" id="btnMenu" class="btn-menu"
+            aria-expanded="false" aria-controls="menuLista">
+      ☰ Menú
+        </button>
+        <ul id="menuLista">
+          <li><a href="index.html" aria-current="page">Panel</a></li>
+          <li><a href="registrar.html">Registrar alerta</a></li>
+          <li><a href="alertas.html">Alertas</a></li>
+        </ul>
     </nav>
   </header>
 
