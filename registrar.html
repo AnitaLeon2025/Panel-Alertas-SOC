@@ -25,7 +25,8 @@
   <main>
     <section>
       <h2 id="titulo-form">Nueva alerta</h2>
-      <p id="mensaje-form" role="status"></p>
+      <p id="mensaje-exito" class="mensaje-exito" role="status"></p>
+      <p id="mensaje-error-form" class="mensaje-error-form" role="alert"></p>
       <form id="formAlerta" novalidate>
 
         <div class="campo">
@@ -59,6 +60,7 @@
         <div class="campo">
           <label for="descripcion">Descripción (10 a 300 caracteres)</label>
           <textarea id="descripcion" name="descripcion" minlength="10" maxlength="300" required></textarea>
+          <small id="ayuda-descripcion" class="ayuda">0 / 300 caracteres</small>
           <small id="error-descripcion" class="error"></small>
         </div>
 
@@ -71,6 +73,7 @@
         <div class="campo">
           <label for="responsable">Analista responsable</label>
           <input type="text" id="responsable" name="responsable" placeholder="Nombre ficticio">
+          <small id="ayuda-responsable" class="ayuda">Obligatorio para cerrar una alerta crítica.</small>
           <small id="error-responsable" class="error"></small>
         </div>
 
@@ -84,6 +87,13 @@
           <small id="error-estado" class="error"></small>
         </div>
 
+        <div class="campo" id="grupo-nota" hidden>
+          <label for="notaCierre">Nota de cierre</label>
+          <textarea id="notaCierre" name="notaCierre" rows="3" maxlength="200"></textarea>
+          <small id="ayuda-notaCierre" class="ayuda">Obligatoria para cerrar una alerta (5 a 200 caracteres).</small>
+          <small id="error-notaCierre" class="error"></small>
+        </div>
+
         <button type="submit" id="guardarBtn">Guardar alerta</button>
       </form>
     </section>
@@ -92,6 +102,7 @@
   <footer><p>Programación II · Equipo 3 · UNAS</p></footer>
   <script src="js/datos.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/reglas.js"></script>
   <script src="js/registrar.js"></script>
 </body>
 </html>
