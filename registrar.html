@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registrar alerta | Alertas SOC</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header>
+    <h1>Registrar Alerta</h1>
+    <nav aria-label="Menú principal">
+      <ul>
+        <li><a href="index.html">Panel</a></li>
+        <li><a href="registrar.html" aria-current="page">Registrar alerta</a></li>
+        <li><a href="alertas.html">Alertas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Nueva alerta</h2>
+      <form id="formAlerta" novalidate>
+
+        <div class="campo">
+          <label for="fuente">Fuente</label>
+          <select id="fuente" name="fuente" required>
+            <option value="firewall">Firewall</option>
+            <option value="antivirus">Antivirus</option>
+            <option value="ids">IDS</option>
+            <option value="correo">Correo</option>
+          </select>
+          <small id="error-fuente" class="error"></small>
+        </div>
+
+        <div class="campo">
+          <label for="severidad">Severidad</label>
+          <select id="severidad" name="severidad" required>
+            <option value="baja">Baja</option>
+            <option value="media">Media</option>
+            <option value="alta">Alta</option>
+            <option value="critica">Crítica</option>
+          </select>
+          <small id="error-severidad" class="error"></small>
+        </div>
+
+        <div class="campo">
+          <label for="activo">Activo afectado</label>
+          <input type="text" id="activo" name="activo" placeholder="Ej: SRV-WEB-01" required>
+          <small id="error-activo" class="error"></small>
+        </div>
+
+        <div class="campo">
+          <label for="descripcion">Descripción (10 a 300 caracteres)</label>
+          <textarea id="descripcion" name="descripcion" minlength="10" maxlength="300" required></textarea>
+          <small id="error-descripcion" class="error"></small>
+        </div>
+
+        <div class="campo">
+          <label for="fecha">Fecha y hora</label>
+          <input type="datetime-local" id="fecha" name="fecha" required>
+          <small id="error-fecha" class="error"></small>
+        </div>
+
+        <div class="campo">
+          <label for="responsable">Analista responsable</label>
+          <input type="text" id="responsable" name="responsable" placeholder="Nombre ficticio">
+          <small id="error-responsable" class="error"></small>
+        </div>
+
+        <div class="campo">
+          <label for="estado">Estado</label>
+          <select id="estado" name="estado" required>
+            <option value="abierta">Abierta</option>
+            <option value="en-revision">En revisión</option>
+            <option value="cerrada">Cerrada</option>
+          </select>
+          <small id="error-estado" class="error"></small>
+        </div>
+
+        <button type="submit" id="guardarBtn">Guardar alerta</button>
+      </form>
+    </section>
+  </main>
+
+  <footer><p>Programación II · Equipo 3 · UNAS</p></footer>
+  <script src="js/datos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
