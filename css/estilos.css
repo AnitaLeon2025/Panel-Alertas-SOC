@@ -182,3 +182,98 @@ button:focus-visible{
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+/* ===== Etapa 3: severidad, tarjetas, barra y botones ===== */
+:root{
+    --sev-critica: #a61e2d;
+    --sev-alta: #b34100;
+    --sev-media: #8a5a00;
+    --sev-baja: #2e7d4f;
+}
+
+.tarjeta.sev-critica{ border-left-color: var(--sev-critica); background-color: #fff5f5; }
+.tarjeta.sev-alta{ border-left-color: var(--sev-alta); }
+.tarjeta.sev-media{ border-left-color: var(--sev-media); }
+.tarjeta.sev-baja{ border-left-color: var(--sev-baja); }
+
+.tarjeta-cabecera{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--espacio-1);
+    font-size: 0.9rem;
+}
+.tarjeta h3{ margin: var(--espacio-1) 0; }
+.tarjeta p{ margin: 4px 0; overflow-wrap: anywhere; }
+.tarjeta .dato{ font-size: 0.9rem; }
+
+.insignia{
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 2px 10px;
+    border-radius: 999px;
+}
+.insignia.sev-critica{ background-color: var(--sev-critica); }
+.insignia.sev-alta{ background-color: var(--sev-alta); }
+.insignia.sev-media{ background-color: var(--sev-media); }
+.insignia.sev-baja{ background-color: var(--sev-baja); }
+
+/* Barra de proporción (la hace panel.js) */
+.barra-proporcion{
+    display: flex;
+    height: 24px;
+    margin-top: var(--espacio-2);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 1px solid var(--color-borde);
+}
+.barra-proporcion .sev-critica, .leyenda .sev-critica::before{ background-color: var(--sev-critica); }
+.barra-proporcion .sev-alta, .leyenda .sev-alta::before{ background-color: var(--sev-alta); }
+.barra-proporcion .sev-media, .leyenda .sev-media::before{ background-color: var(--sev-media); }
+.barra-proporcion .sev-baja, .leyenda .sev-baja::before{ background-color: var(--sev-baja); }
+
+.leyenda{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-1) var(--espacio-2);
+    padding: 0;
+    margin: var(--espacio-1) 0 0;
+    font-size: 0.9rem;
+}
+.leyenda li::before{
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    border-radius: 2px;
+}
+
+.vacio{
+    background-color: var(--color-tarjeta);
+    border: 2px dashed var(--color-borde);
+    border-radius: 8px;
+    padding: var(--espacio-2);
+}
+
+.acciones{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-1);
+    margin-top: var(--espacio-1);
+}
+.boton-enlace{
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid var(--color-boton);
+    border-radius: 5px;
+    color: var(--color-boton);
+    font-weight: bold;
+    text-decoration: none;
+}
+.btn-peligro{ background-color: var(--color-error); }
+.btn-peligro:hover, .btn-peligro:focus-visible{ background-color: #5c0000; }
+#mensaje-form{ font-weight: bold; }
