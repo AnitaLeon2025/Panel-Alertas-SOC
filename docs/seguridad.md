@@ -37,3 +37,5 @@ Proyecto: Panel de Alertas SOC · Equipo 3
 **Cómo se cumple:** Las 3 páginas incluyen la etiqueta `Content-Security-Policy`, que solo permite cargar scripts, estilos e imágenes del propio sitio. Todos los scripts son archivos de la carpeta `js/`.
 
 **Evidencia:** `git grep -n "Content-Security-Policy"` devuelve una línea por página, y `git grep -n "<script"` muestra que todos los scripts apuntan a `js/`.
+
+**Comprobación adicional:** al abrir el sitio con Live Server, la consola muestra que la política bloquea el script que Live Server inyecta en la página (`Executing inline script violates ... 'script-src 'self'`). Eso confirma que solo se ejecutan los scripts propios del proyecto.
