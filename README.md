@@ -6,8 +6,7 @@ Proyecto de Programación II (IC010404) · Equipo 3
 
 Panel web para registrar y consultar alertas de seguridad (firewall, antivirus, IDS, correo). Está hecho solo con HTML, CSS y JavaScript, sin frameworks ni librerías.
 
-**Sitio publicado (GitHub Pages):** https://github.com/AnitaLeon2025/Panel-Alertas-SOC/deployments/github-pages
-
+**Sitio publicado (GitHub Pages):**  https://anitaleon2025.github.io/Panel-Alertas-SOC/
 ## Etapas
 
 - [x] E1 Estructura y navegación — [PR #1](https://github.com/AnitaLeon2025/Panel-Alertas-SOC/pull/1) · v0.1
